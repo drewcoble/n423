@@ -1,0 +1,10 @@
+//mix-in for a card (home page, current weather, forecast)
+@mixin card-layout($width) {
+  width: $width;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-rad;
+  background-color: rgba($white, 0.3);
+}

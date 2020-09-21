@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WindyMan Weather</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="siteNav">
+      <div class="navLeft">
+        <h1>WM<i class="fas fa-wind"></i></h1>
+        <a href="#">TODAY</a>
+        <a href="#">FORECAST</a>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+      </div>
+      <div class="navRight">
+        <a href="#">SIGN UP</a>
+        <a href="#">LOG IN</a>
+      </div>
+    </nav>
+    <div class="siteContentTop">
+      <div class="titleContent">
+        <h1 class="siteTitle">WINDYMAN WEATHER</h1>
+        <i class="fas fa-wind"></i>
+        <p class="subTitle">
+          Enter a zipcode or city name to get a five day forecast.
+          <span style="color: red" class="hidden" id="message">
+            <br />Error: Please try a different search.
+          </span>
+        </p>
+
+        <div class="inputBox">
+          <input id="zipcode" type="text" placeholder="Zip Code or City" />
+          <button id="getWeather">Get Weather</button>
+        </div>
+      </div>
+      <div class="currentWeatherContent"></div>
+    </div>
+    <div class="siteContentBottom">
+      <div class="forecastDiv day2"></div>
+      <div class="forecastDiv day3"></div>
+      <div class="forecastDiv day4"></div>
+    </div>
+    <!-- <div class="arrowBox">
+      <i class="fa fa-arrow-circle-left arrow-icon"></i>
+      <i class="fa fa-arrow-circle-right arrow-icon"></i>
+    </div> -->
+
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>
