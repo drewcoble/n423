@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 3</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/students.png" type="image/icon type" />
+  </head>
+  <body>
+    <nav>
+      <span>Homework 3</span>
+
+      <img height="80px" src="images/students.png" alt="" />
+      <span> Student Info </span>
+    </nav>
+
+    <div id="alertDiv">
+      <div class="alertBox">
+        <div id="alertMessage">THIS IS THE DEFAULT ALERT.</div>
+        <div class="okBtn" id="okBtn">OK</div>
+      </div>
+    </div>
+
+    <div class="inputForm">
+      <h1>Add a New Student</h1>
+      <div class="inputRow">
+        <div class="inputLabel">Name</div>
+        <input id="studentName" type="text" />
+      </div>
+      <div class="inputRow">
+        <div class="inputLabel">Age</div>
+        <input id="studentAge" type="number" />
+      </div>
+      <div class="inputRow">
+        <div class="inputLabel">Phone #</div>
+        <input id="studentPhone" type="text" />
+      </div>
+      <div class="inputRow">
+        <div class="inputLabel">Email</div>
+        <input id="studentEmail" type="email" />
+      </div>
+      <div class="inputRow classesDiv">
+        <div class="inputLabel">Classes</div>
+        <input class="studentClass" type="text" />
+        <input class="studentClass" type="text" />
+        <input class="studentClass" type="text" />
+        <input class="studentClass" type="text" />
+        <input class="studentClass" type="text" />
+      </div>
+
+      <button id="addStudent">Add Student</button>
+    </div>
+
+    <div class="studentsContent">
+      <button id="showStudents">Show Students</button>
+      <div class="studentsInfo"></div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

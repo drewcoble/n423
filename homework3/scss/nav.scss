@@ -1,0 +1,15 @@
+nav {
+  height: 100px;
+  color: white;
+  background-color: rgba(30, 70, 120, 1);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: xx-large;
+
+  span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

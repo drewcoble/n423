@@ -1,0 +1,146 @@
+#alertDiv {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  #alertDiv .alertBox {
+    height: 200px;
+    width: 300px;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px; }
+    #alertDiv .alertBox .okBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 150px;
+      font-size: medium;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      background-color: #1e4678;
+      font-weight: 600;
+      cursor: pointer; }
+      #alertDiv .alertBox .okBtn:hover {
+        background-color: rgba(30, 70, 120, 0.8); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  font-family: "Tahoma", "Arial"; }
+
+.hidden {
+  display: none; }
+
+nav {
+  height: 100px;
+  color: white;
+  background-color: #1e4678;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: xx-large; }
+  nav span {
+    height: 100%;
+    display: flex;
+    align-items: center; }
+
+.inputForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightsteelblue;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px; }
+  .inputForm h1 {
+    margin-bottom: 10px; }
+  .inputForm .inputRow {
+    width: 50%;
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .inputForm .classesDiv {
+    flex-direction: column; }
+  .inputForm .inputLabel {
+    font-weight: 700;
+    font-size: large; }
+  .inputForm input {
+    width: 300px;
+    margin: 10px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: medium; }
+  .inputForm button {
+    height: 50px;
+    width: 150px;
+    font-size: medium;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #1e4678;
+    font-weight: 600;
+    cursor: pointer; }
+    .inputForm button:hover {
+      background-color: rgba(30, 70, 120, 0.8); }
+
+.studentsContent {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightsteelblue;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px; }
+  .studentsContent #showStudents {
+    height: 50px;
+    width: 150px;
+    font-size: medium;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #1e4678;
+    font-weight: 600;
+    cursor: pointer; }
+    .studentsContent #showStudents:hover {
+      background-color: rgba(30, 70, 120, 0.8); }
+  .studentsContent .studentsInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    .studentsContent .studentsInfo .studentCard {
+      background-color: white;
+      width: 100%;
+      display: flex;
+      margin-top: 20px;
+      border-radius: 10px; }
+      .studentsContent .studentsInfo .studentCard .studentCardInfo,
+      .studentsContent .studentsInfo .studentCard .studentCardClasses {
+        width: 50%;
+        padding: 20px; }
+      .studentsContent .studentsInfo .studentCard .studentCardClasses {
+        border-left: 1px solid gray; }

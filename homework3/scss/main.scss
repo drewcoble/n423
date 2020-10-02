@@ -1,0 +1,112 @@
+.inputForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightsteelblue;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .inputRow {
+    width: 50%;
+    display: flex;
+    margin: 10px 0;
+    // background-color: teal;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .classesDiv {
+    flex-direction: column;
+  }
+
+  .inputLabel {
+    font-weight: 700;
+    font-size: large;
+  }
+
+  input {
+    width: 300px;
+    margin: 10px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: medium;
+  }
+
+  button {
+    height: 50px;
+    width: 150px;
+    font-size: medium;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(30, 70, 120, 1);
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(30, 70, 120, 0.8);
+    }
+  }
+}
+
+.studentsContent {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightsteelblue;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+
+  #showStudents {
+    height: 50px;
+    width: 150px;
+    font-size: medium;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(30, 70, 120, 1);
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(30, 70, 120, 0.8);
+    }
+  }
+
+  .studentsInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .studentCard {
+      background-color: white;
+      width: 100%;
+      display: flex;
+      margin-top: 20px;
+      border-radius: 10px;
+
+      .studentCardInfo,
+      .studentCardClasses {
+        width: 50%;
+        padding: 20px;
+      }
+      .studentCardClasses {
+        border-left: 1px solid gray;
+      }
+    }
+  }
+}
