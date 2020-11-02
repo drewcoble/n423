@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: arial, sans-serif;
+  background-color: rgb(90, 100, 110);
+  color: white;
+  height: 100%;
+}
+
+.select-div {
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(40, 50, 60);
+  color: white;
+  box-shadow: 3px 3px 5px rgba(0, 10, 20, 0.2);
+}
+
+select {
+  margin-left: 20px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.genre-content {
+  width: 100%;
+  text-align: center;
+  padding: 20px 20px 10px;
+}
+
+.albums-content {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  min-width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: rgb(40, 50, 60);
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 3px 3px 5px rgba(0, 10, 20, 0.2);
+  margin: 10px;
+}
+
+.album-card img {
+  margin: 15px auto;
+}
+
+.album-card .album-info {
+  margin: 0;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 40%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 15px;
+}
+
+.genre-info {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.artist-info {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.album-name {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0.4px;
+}

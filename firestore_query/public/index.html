@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firestore Albums</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <div class="select-div">
+      <label for="genres">Choose a genre:</label>
+      <select name="genres" id="genres">
+        <option value="All Albums">All</option>
+        <option value="Pop">Pop</option>
+        <option value="Rap">Rap</option>
+        <option value="Rock">Rock</option>
+      </select>
+    </div>
+
+    <h3 class="genre-content">All Albums</h3>
+    <div class="albums-content"></div>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.0.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.0.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.0.0/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script type="module" src="model/model.js"></script>
+    <script type="module" src="app/app.js"></script>
+  </body>
+</html>
