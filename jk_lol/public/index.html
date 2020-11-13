@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JK LOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous" />
+    <link rel="shortcut icon" href="images/jk-lol.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.typekit.net/kmb3ofh.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+        <nav>
+          <div class="nav-content">
+
+            <h1 class='nav-title'>JK LOL</h1>
+
+            <div class="nav-menu">
+              <i class="nav-menu-btn fas fa-ellipsis-v" id="nav-menu-btn"></i>
+              <div class="nav-links hidden">
+                <div id="home" class="nav-link">Home</div>
+                <div id="myJokes" class="nav-link">My Jokes</div>
+                <div id="signIn" class="nav-link user-div">Sign In</div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <h1 id="page-title">Browse Jokes</h1>
+        
+        <div id="site-content">
+      
+        
+        </div>
+
+
+        
+        <div class="filter-btn-container">
+          <div class="filter-btn">
+            FILTER JOKES
+          </div>
+        </div>
+        
+        
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.0.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.0.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.0.0/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.0.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.0.0/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.0.0/firebase-performance.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- scripts for the app -->
+    <script src="lib/jquery.min.js"></script>
+    <script type="module" src="model/model.js"></script>
+    <script type="module" src="app/app.js"></script>
+  </body>
+</html>

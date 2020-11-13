@@ -1,0 +1,126 @@
+nav {
+  height: 70px;
+  width: 100%;
+  background-color: rgba($yellow, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $shadow;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .nav-content {
+    font-size: 120%;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1080px;
+    justify-content: space-between;
+    align-items: center;
+
+    div,
+    h1 {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-menu {
+      min-height: 70px;
+      width: 200px;
+      font-size: 120%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      #nav-menu-btn {
+        // background-color: red;
+      }
+
+      // background-color: red;
+      // padding-left: 10px;
+
+      .nav-menu-btn {
+        font-size: 30px;
+        height: 70px;
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        padding: 0;
+
+        &::before {
+          height: 100%;
+          width: 60px;
+          // background-color: green;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        box-shadow: $medium-shadow;
+
+        .nav-link {
+          height: 70px;
+          width: 100%;
+          padding: 0 20px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $yellow;
+          }
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+    }
+
+    .nav-title {
+      height: 100%;
+      width: 20%;
+      min-width: 160px;
+      font-family: $font-title;
+      display: flex;
+      justify-content: center;
+      font-size: 200%;
+      // background-color: greenyellow;
+    }
+
+    .nav-user {
+      height: 100%;
+      width: 40%;
+      // background-color: orange;
+      justify-content: flex-end;
+      // padding-right: 10px;
+      font-size: 120%;
+
+      .nav-link {
+        height: 100%;
+        padding: 0 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $old-yellow;
+        }
+      }
+
+      .user-div {
+        min-width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "jk_lol",
+  "version": "1.0.0",
+  "description": "an app to jot down your jokes",
+  "main": "index.js",
+  "scripts": {
+    "fire-serve-local": "firebase serve --only hosting",
+    "fire-deploy": "firebase deploy",
+    "serve": "live-server",
+    "sass": "sass --watch public/scss/styles.scss public/css/styles.css"
+  },
+  "author": "Andy Coble",
+  "license": "ISC"
+}
