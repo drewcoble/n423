@@ -17,7 +17,7 @@ nav {
     height: 100%;
     max-width: 1080px;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
 
     div,
     h1 {
@@ -32,9 +32,11 @@ nav {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      position: fixed;
-      top: 0;
-      right: 0;
+      justify-content: flex-start;
+      // margin-top: 70px;
+      // position: fixed;
+      // top: 0;
+      // right: 0;
 
       #nav-menu-btn {
         // background-color: red;
@@ -46,11 +48,11 @@ nav {
       .nav-menu-btn {
         font-size: 30px;
         height: 70px;
-        width: 60px;
+        min-width: 60px;
         display: flex;
         justify-content: flex-end;
         align-content: center;
-        padding: 0;
+        padding: 20px 20px 20px 0;
 
         &::before {
           height: 100%;
@@ -62,7 +64,8 @@ nav {
         }
       }
 
-      .nav-links {
+      .nav-links,
+      #signInOut {
         width: 100%;
         display: flex;
         flex-direction: column;

@@ -6,13 +6,13 @@
 
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   width: 100%;
-  height: 100%;
-  padding-top: 75px;
+  padding-top: 70px;
+  padding-bottom: 50px;
   font-family: isonorm, sans-serif;
   color: #172120;
   background-color: #eeeee9;
@@ -37,7 +37,6 @@ nav .nav-content {
   height: 100%;
   max-width: 1080px;
   justify-content: space-between;
-  align-items: center;
 }
 nav .nav-content div,
 nav .nav-content h1 {
@@ -51,18 +50,16 @@ nav .nav-content .nav-menu {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  position: fixed;
-  top: 0;
-  right: 0;
+  justify-content: flex-start;
 }
 nav .nav-content .nav-menu .nav-menu-btn {
   font-size: 30px;
   height: 70px;
-  width: 60px;
+  min-width: 60px;
   display: flex;
   justify-content: flex-end;
   align-content: center;
-  padding: 0;
+  padding: 20px 20px 20px 0;
 }
 nav .nav-content .nav-menu .nav-menu-btn::before {
   height: 100%;
@@ -71,20 +68,23 @@ nav .nav-content .nav-menu .nav-menu-btn::before {
   justify-content: center;
   align-items: center;
 }
-nav .nav-content .nav-menu .nav-links {
+nav .nav-content .nav-menu .nav-links,
+nav .nav-content .nav-menu #signInOut {
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #fffdfb;
   box-shadow: 2px 5px 9px rgba(55, 65, 64, 0.15);
 }
-nav .nav-content .nav-menu .nav-links .nav-link {
+nav .nav-content .nav-menu .nav-links .nav-link,
+nav .nav-content .nav-menu #signInOut .nav-link {
   height: 70px;
   width: 100%;
   padding: 0 20px;
   cursor: pointer;
 }
-nav .nav-content .nav-menu .nav-links .nav-link:hover {
+nav .nav-content .nav-menu .nav-links .nav-link:hover,
+nav .nav-content .nav-menu #signInOut .nav-link:hover {
   background-color: #f9ef69;
 }
 nav .nav-content .nav-menu .hidden {
@@ -120,6 +120,28 @@ nav .nav-content .nav-user .user-div {
   align-items: center;
 }
 
+.alert-container {
+  background-color: rgba(23, 33, 32, 0.25);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alert-container .alert-box {
+  min-height: 250px;
+  width: 275px;
+  background-color: #fffdfb;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #page-title {
   width: 100%;
   display: flex;
@@ -132,108 +154,29 @@ nav .nav-content .nav-user .user-div {
   width: 100%;
   min-height: calc(100% - 50px);
 }
-#site-content #home-content {
-  height: 100%;
+#site-content .filter-btn-container {
   width: 100%;
-  margin-bottom: 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-#site-content #home-content .joke-div {
-  min-height: 300px;
-  width: 330px;
-  border-radius: 8px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-#site-content #home-content .joke-div .joke-top {
-  min-height: 230px;
-  width: 100%;
-  background-color: #fffdfb;
-  border-radius: 8px 8px 0 0;
-  padding: 20px;
-}
-#site-content #home-content .joke-div .joke-top .joke-top-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#site-content #home-content .joke-div .joke-top .joke-top-info h6 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: rgba(55, 65, 64, 0.4);
-  font-family: chaloops, sans-serif;
-}
-#site-content #home-content .joke-div .joke-top .joke-top-info .lol-div {
-  height: 30px;
-  min-width: 60px;
-  border-radius: 8px;
-  background-color: rgba(55, 65, 64, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-}
-#site-content #home-content .joke-div .joke-top .joke-top-info .lol-div .lol-num {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: calc(100% - 24px);
-  min-width: 24px;
-  text-align: center;
-}
-#site-content #home-content .joke-div .joke-top .joke-top-info .lol-div .lol-icon {
-  height: 100%;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 10px;
+  background-color: rgba(238, 238, 233, 0.9);
+  position: fixed;
+  bottom: 0;
+  box-shadow: 1px -4px 6px rgba(55, 65, 64, 0.15);
+  padding: 10px 20px;
+}
+#site-content .filter-btn-container .filter-btn {
+  background-color: rgba(249, 239, 105, 0.9);
+  border-radius: 8px;
   height: 100%;
-  width: 30px;
-  min-width: 30px;
-  font-size: 20px;
-}
-#site-content #home-content .joke-div .joke-top .joke-top-info .lol-clicked {
-  background-color: #f9ef69;
-}
-#site-content #home-content .joke-div .joke-top h5 {
-  display: flex;
-  align-items: center;
   width: 100%;
-  min-height: 90px;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-#site-content #home-content .joke-div .joke-top p {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  min-height: 60px;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-#site-content #home-content .joke-div .joke-bottom {
-  height: 80px;
-  width: 100%;
-  background-color: rgba(249, 239, 105, 0.95);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  border-radius: 0 0 8px 8px;
-}
-#site-content #home-content .joke-div .joke-bottom .user-name {
-  letter-spacing: 0.5px;
-  font-size: 16px;
+  font-size: 25px;
+  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
 }
 #site-content #sign-in-content,
 #site-content #sign-up-content {
@@ -303,34 +246,283 @@ nav .nav-content .nav-user .user-div {
   border: none;
 }
 
-.filter-btn-container {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 10px;
-  background-color: rgba(238, 238, 233, 0.9);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  box-shadow: 1px -4px 6px rgba(55, 65, 64, 0.15);
-  padding: 10px 20px;
-}
-.filter-btn-container .filter-btn {
-  background-color: rgba(249, 239, 105, 0.9);
-  border-radius: 8px;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-}
-
 .hidden {
   display: none;
+}
+
+#home-content {
+  width: 100%;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#home-content .joke-div {
+  min-height: 300px;
+  width: 330px;
+  border-radius: 8px;
+  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+#home-content .joke-div .joke-top {
+  min-height: 230px;
+  width: 100%;
+  background-color: #fffdfb;
+  border-radius: 8px 8px 0 0;
+  padding: 20px;
+}
+#home-content .joke-div .joke-top .joke-top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home-content .joke-div .joke-top .joke-top-info h6 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(55, 65, 64, 0.4);
+  font-family: chaloops, sans-serif;
+}
+#home-content .joke-div .joke-top .joke-top-info .lol-div {
+  height: 30px;
+  min-width: 60px;
+  border-radius: 8px;
+  background-color: rgba(55, 65, 64, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+}
+#home-content .joke-div .joke-top .joke-top-info .lol-div .lol-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: calc(100% - 24px);
+  min-width: 24px;
+  text-align: center;
+}
+#home-content .joke-div .joke-top .joke-top-info .lol-div .lol-icon {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30px;
+  min-width: 30px;
+  font-size: 20px;
+}
+#home-content .joke-div .joke-top .joke-top-info .lol-clicked {
+  background-color: #f9ef69;
+}
+#home-content .joke-div .joke-top h5 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 90px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+#home-content .joke-div .joke-top p {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 60px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+#home-content .joke-div .joke-bottom {
+  height: 80px;
+  width: 100%;
+  background-color: rgba(249, 239, 105, 0.95);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 0 0 8px 8px;
+}
+#home-content .joke-div .joke-bottom .user-name {
+  letter-spacing: 0.5px;
+  font-size: 16px;
+}
+
+#my-jokes-content {
+  width: 100%;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#my-jokes-content .joke-div {
+  min-height: 300px;
+  width: 330px;
+  border-radius: 8px;
+  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+#my-jokes-content .joke-div .joke-top {
+  min-height: 230px;
+  width: 100%;
+  background-color: #fffdfb;
+  border-radius: 8px 8px 0 0;
+  padding: 20px;
+}
+#my-jokes-content .joke-div .joke-top .joke-top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#my-jokes-content .joke-div .joke-top .joke-top-info h6 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(55, 65, 64, 0.4);
+  font-family: chaloops, sans-serif;
+}
+#my-jokes-content .joke-div .joke-top .joke-top-info .lol-div {
+  height: 30px;
+  min-width: 60px;
+  border-radius: 8px;
+  background-color: rgba(55, 65, 64, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+}
+#my-jokes-content .joke-div .joke-top .joke-top-info .lol-div .lol-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: calc(100% - 24px);
+  min-width: 24px;
+  text-align: center;
+}
+#my-jokes-content .joke-div .joke-top .joke-top-info .lol-div .lol-icon {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30px;
+  min-width: 30px;
+  font-size: 20px;
+}
+#my-jokes-content .joke-div .joke-top .joke-top-info .lol-clicked {
+  background-color: #f9ef69;
+}
+#my-jokes-content .joke-div .joke-top h5 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 90px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+#my-jokes-content .joke-div .joke-top p {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 60px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+#my-jokes-content .joke-div .joke-bottom {
+  height: 80px;
+  width: 100%;
+  background-color: rgba(249, 239, 105, 0.95);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 0 0 8px 8px;
+}
+#my-jokes-content .joke-div .joke-bottom .user-name {
+  letter-spacing: 0.5px;
+  font-size: 16px;
+}
+
+.lol-text {
+  font-family: chaloops, sans-serif;
+}
+
+#new-joke-content {
+  width: calc(100% - 40px);
+  margin: 0 20px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #fffdfb;
+  border-radius: 8px;
+  font-size: 16px;
+}
+#new-joke-content h2 {
+  margin-bottom: 5px;
+}
+#new-joke-content .new-joke-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+#new-joke-content .new-joke-row select {
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #eeeee9;
+  padding: 5px;
+}
+#new-joke-content .new-joke-row select option {
+  font-size: 16px;
+}
+#new-joke-content .new-joke-row input {
+  border-radius: 8px;
+  border: 1px solid #eeeee9;
+  margin-left: 12px;
+  font-size: 16px;
+}
+#new-joke-content .new-joke-row textarea {
+  width: 100%;
+  min-height: 40px;
+  min-width: 100%;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #eeeee9;
+  font-family: isonorm, sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+#new-joke-content .new-joke-row label {
+  margin-left: 3px;
+  font-size: 16px;
+}
+#new-joke-content .submit-btn {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 0;
+  background-color: #f9ef69;
+  border-radius: 8px;
+  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=styles.css.map */

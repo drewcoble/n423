@@ -1,0 +1,22 @@
+.alert-container {
+  background-color: rgba($black, 0.25);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .alert-box {
+    min-height: 250px;
+    width: 275px;
+    background-color: $white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

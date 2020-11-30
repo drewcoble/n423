@@ -1,0 +1,20 @@
+<div class="joke-div">
+    <div class="joke-top">
+        <div class="joke-top-info">
+            <h6>${joke.category}</h6>
+
+            <div class="lol-div" id="${doc.id}">
+                <span class="lol-num" id="lol-num-${doc.id}">${lolCount}</span>
+                <span class="lol-icon"><i class="fas fa-laugh-squint"></i></span>
+            </div>
+        </div>
+
+        <h5>${joke.content.setup}</h5>
+        <p>${joke.content.punchline}</p>
+    </div>
+    <div class="joke-bottom">
+        <div class="user-name">
+            by <strong>${joke.user}</strong>
+        </div>
+    </div>
+</div>

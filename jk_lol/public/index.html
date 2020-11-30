@@ -19,11 +19,16 @@
             <h1 class='nav-title'>JK LOL</h1>
 
             <div class="nav-menu">
-              <i class="nav-menu-btn fas fa-ellipsis-v" id="nav-menu-btn"></i>
+              <div class="nav-menu-btn">
+                <span id="user-name"></span>
+                <i class="fas fa-ellipsis-v" id="nav-menu-btn"></i>
+              </div>
               <div class="nav-links hidden">
                 <div id="home" class="nav-link">Home</div>
-                <div id="myJokes" class="nav-link">My Jokes</div>
-                <div id="signIn" class="nav-link user-div">Sign In</div>
+                <div id="myJokes" class="nav-link hidden">My Jokes</div>
+                <span id="signInOut">
+                  <div id="signIn" class="nav-link user-div">Sign In</div>
+                </span>
               </div>
             </div>
           </div>
@@ -32,17 +37,19 @@
         <h1 id="page-title">Browse Jokes</h1>
         
         <div id="site-content">
-      
-        
+          
         </div>
 
-
-        
-        <div class="filter-btn-container">
-          <div class="filter-btn">
-            FILTER JOKES
+        <div class="alert-container hidden">
+          <div class="alert-box">
+            <div id="alert-message">Alert Message</div>
+            <div id="alert-btn-container">Alert Buttons</div>
           </div>
         </div>
+
+        
+        
+        
         
         
 

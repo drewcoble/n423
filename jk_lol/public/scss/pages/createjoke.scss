@@ -1,0 +1,74 @@
+.lol-text {
+  font-family: $font-title;
+}
+
+#new-joke-content {
+  width: calc(100% - 40px);
+  margin: 0 20px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: $white;
+  border-radius: 8px;
+  font-size: 16px;
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  .new-joke-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+
+    select {
+      font-size: 16px;
+      //   height: 20px;
+      border-radius: 8px;
+      border: 1px solid $white-ish;
+      padding: 5px;
+      option {
+        font-size: 16px;
+        // height: 20px;
+      }
+    }
+    input {
+      border-radius: 8px;
+      border: 1px solid $white-ish;
+      margin-left: 12px;
+      font-size: 16px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 40px;
+      min-width: 100%;
+      padding: 5px;
+      border-radius: 8px;
+      border: 1px solid $white-ish;
+      font-family: $font-sans;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+    label {
+      margin-left: 3px;
+      font-size: 16px;
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0;
+    background-color: $yellow;
+    border-radius: 8px;
+    box-shadow: $shadow;
+    font-size: 22px;
+  }
+}

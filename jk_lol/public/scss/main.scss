@@ -10,128 +10,33 @@
 
 #site-content {
   width: 100%;
+  // padding-bottom: 50px;
   min-height: calc(100% - 50px);
 
-  #home-content {
-    height: 100%;
+  .filter-btn-container {
     width: 100%;
-    margin-bottom: 70px;
+    height: 70px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    // background-color: green;
+    letter-spacing: 10px;
+    background-color: rgba($white-ish, 0.9);
+    position: fixed;
+    bottom: 0;
+    // left: 0;
+    box-shadow: $top-shadow;
+    padding: 10px 20px;
 
-    .joke-div {
-      min-height: 300px;
-      width: 330px;
+    .filter-btn {
+      background-color: rgba($yellow, 0.9);
       border-radius: 8px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
       box-shadow: $shadow;
-      margin-top: 5px;
-      margin-bottom: 20px;
-      // background-color: greenyellow;
-
-      .joke-top {
-        min-height: 230px;
-        width: 100%;
-        background-color: $white;
-        border-radius: 8px 8px 0 0;
-        padding: 20px;
-
-        .joke-top-info {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          h6 {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 40px;
-            // background-color: blue;
-            font-size: 14px;
-            letter-spacing: 2px;
-            color: rgba($dark-gray, 0.4);
-            font-family: $font-title;
-          }
-
-          .lol-div {
-            height: 30px;
-            min-width: 60px;
-            border-radius: 8px;
-            background-color: rgba($dark-gray, 0.1);
-            // border: 2px solid $black;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 3px;
-            box-shadow: $shadow;
-
-            .lol-num {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              // padding: 0 5px;
-              height: 100%;
-              width: calc(100% - 24px);
-              min-width: 24px;
-              text-align: center;
-            }
-
-            .lol-icon {
-              height: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100%;
-              width: 30px;
-              min-width: 30px;
-              font-size: 20px;
-              // padding: 0 0 0 5px;
-              // border-left: 1px solid $black;
-            }
-          }
-
-          .lol-clicked {
-            background-color: $yellow;
-          }
-        }
-
-        h5 {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          // background-color: orange;
-          min-height: 90px;
-          font-size: 22px;
-          letter-spacing: 1px;
-        }
-        p {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          // background-color: teal;
-          min-height: 60px;
-          font-size: 18px;
-          letter-spacing: 0.5px;
-        }
-      }
-      .joke-bottom {
-        height: 80px;
-        width: 100%;
-        background-color: rgba($yellow, 0.95);
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        border-radius: 0 0 8px 8px;
-
-        .user-name {
-          letter-spacing: 0.5px;
-          font-size: 16px;
-        }
-      }
     }
   }
 
@@ -188,33 +93,6 @@
         border: none;
       }
     }
-  }
-}
-
-.filter-btn-container {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 10px;
-  background-color: rgba($white-ish, 0.9);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  box-shadow: $top-shadow;
-  padding: 10px 20px;
-
-  .filter-btn {
-    background-color: rgba($yellow, 0.9);
-    border-radius: 8px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    box-shadow: $shadow;
   }
 }
 

@@ -1,100 +1,168 @@
 import * as App from "../app/app.js";
 var _db;
-var uid;
+var _user;
 
-export function initFirebase() {
-    // console.log("initFirebase");
+export function initFirebase(callback) {
+    //connect to firestore
+    _db = firebase.firestore();
+    console.log('connected to firebase');
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            uid = firebase.auth().currentUser.uid; 
-            console.log(user);
-            _db = firebase.firestore();
-            getAllJokes();
+            _user = firebase.auth().currentUser; 
+            console.log("User: ", _user);
+            App.setSignInOut('SignedIn');
         } else {
             console.log("no user");
-            _db = "";
-            uid = null;
-            signInAnon();
+            _user = null;
+            App.setSignInOut('SignedOut');
         }
+        getAllJokes(callback);
+        // App.displayCreateJokeContent();
 });
 }
 
-export function signInAnon(callback) {
-
-    firebase
-    .auth()
-    .signInAnonymously()
-    .then(function(result) {
-        console.log("anon signed in");
-        _db = firebase.firestore();
-        getAllJokes()
-    })
+export function checkUserForMatch(userId) {
+    if (_user.uid == userId) {
+        console.log("this is the user's page");
+        return true;
+    }
+    else {
+        console.log("this is not the user's page");
+        return false;
+    }
 }
 
-export function getAllJokes() {
-    // console.log("getAllJokes");
+export function getAllJokes(callback) {
+    console.log("getAllJokes");
+    
     _db
     .collection("jokes")
+    .where('public', '==', 'true')
+    .orderBy("timestamp", "desc")
     .get()
     .then(function(querySnapshot) {
-        App.displayJokes(querySnapshot);
-        App.initCardListeners();
+        //callback function displays home page
+        callback(querySnapshot);
     })
 }
 
-export function checkLol(id) {
-    let jokeRef = _db.collection("jokes").doc(id); 
+export function getJokesByUserId(callback, userId) {
+    console.log('getJokesByUserId', userId);
 
-    jokeRef
+    //if no userId is passed, set it to current user's id
+    if (!userId) {
+        userId = _user.uid;
+    }
+
+    _db
+    .collection("jokes")
+    .where("uid", "==", userId)
+    .orderBy("timestamp", "desc")
     .get()
-    .then(function(doc) {
-       let joke = doc.data();
+    .then((querySnapshot) => {
+        callback(querySnapshot, userId);
+        // querySnapshot.forEach((doc) => {
+        //     console.log(doc.id, " => ", doc.data());
+        // })
 
-       if (joke.lols.includes(uid)) {
-            $(`#${id}`).addClass("lol-clicked");
-       }
-    });
+    })
+}
+
+export function checkForLol(id) {
+
+    if(_user) {
+        let jokeRef = _db.collection("jokes").doc(id); 
+
+        jokeRef
+        .get()
+        .then(function(doc) {
+            let joke = doc.data();
+
+            if (joke.lols.includes(_user.uid)) {
+                $(`#${id}`).addClass("lol-clicked");
+            }
+        });
+    }
 }
 
 export function toggleLol(id) {
 
-    let jokeRef = _db.collection("jokes").doc(id); 
+    // if the user is signed in they can LOL at a joke
+    if (_user) {
+        let jokeRef = _db.collection("jokes").doc(id); 
 
-    jokeRef
-    .get()
-    .then(function(doc) {
-    //    console.log(doc.id);
-    
-       let joke = doc.data();
-       let lolCount = joke.lols.length;
+        jokeRef
+        .get()
+        .then(function(doc) {
+        //    console.log(doc.id);
+        
+        let joke = doc.data();
+        let lolCount = joke.lols.length;
 
-       if (joke.lols.includes(uid)) {
-            // console.log("it's in there")
-            jokeRef.update({
-                lols: firebase.firestore.FieldValue.arrayRemove(uid)
-            })
-            .then(function() {
-                $(`#lol-num-${id}`).html(lolCount - 1);
-                $(`#${id}`).removeClass("lol-clicked");
-            });
-       }
-       else {
-            jokeRef.update({
-                lols: firebase.firestore.FieldValue.arrayUnion(uid)
-            })
-            .then(function() {
-                $(`#lol-num-${id}`).html(lolCount + 1);
-                $(`#${id}`).addClass("lol-clicked");
-            });
-        //    console.log("it's not in there");
-       }
-        // console.log(querySnapshot);
+        if (joke.lols.includes(_user.uid)) {
+                // console.log("it's in there")
+                jokeRef.update({
+                    lols: firebase.firestore.FieldValue.arrayRemove(_user.uid)
+                })
+                .then(function() {
+                    $(`#lol-num-${id}`).html(lolCount - 1);
+                    $(`#${id}`).removeClass("lol-clicked");
+                });
+        }
+        else {
+                jokeRef.update({
+                    lols: firebase.firestore.FieldValue.arrayUnion(_user.uid)
+                })
+                .then(function() {
+                    $(`#lol-num-${id}`).html(lolCount + 1);
+                    $(`#${id}`).addClass("lol-clicked");
+                });
+            //    console.log("it's not in there");
+        }
+            // console.log(querySnapshot);
+        });
+    }
+    //display message for user to sign in/sign up to LOL at a joke
+    else {
+        let message = `Please Sign In or Sign Up so we know who's laughing.`;
+        $('#alert-message').html(message);
+        $('.alert-container').removeClass('hidden');
+    }
+}
+
+export function createNewJoke(jokeData, callback) {
+    // add uid and username to jokeData
+    jokeData.uid = _user.uid;
+    jokeData.user = _user.displayName;
+
+    // Add a new document with a generated id.
+    _db.collection("jokes").add({
+        category: jokeData.category,
+        content: jokeData.content,
+        lols: [],
+        public: jokeData.public,
+        rating: jokeData.rating,
+        uid: jokeData.uid,
+        user: jokeData.user,
+        timestamp: firebase.firestore.Timestamp.now()
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        getJokesByUserId(callback);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
     });
 }
 
+
 export function signIn(email,password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -141,4 +209,14 @@ export function signUp(email,password,displayName) {
     });
 
 
+}
+
+export function signOut() {
+    firebase
+    .auth()
+    .signOut()
+    .then(function(result) {
+        // console.log("anon signed in", _user.uid);
+        // getAllJokes()
+    })
 }
