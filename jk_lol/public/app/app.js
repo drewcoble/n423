@@ -69,7 +69,9 @@ export function displayHomeContent(jokesData) {
                 </div>
                 <div class="joke-bottom">
                     <div class="user-name">
-                        by <div class='user-link' id='${joke.uid}'>${joke.user}</div>
+                        by <div class='user-link' id='${joke.uid}'>${joke.user}
+                        <img src='https://firebasestorage.googleapis.com/v0/b/n423-data-dc.appspot.com/o/1606771207844-miles_sandals.png?alt=media&token=35c080cc-4073-4bc4-be41-a0711b8cb331' class='user-img'>
+                        </div>
                     </div>
                 </div>
             </div>

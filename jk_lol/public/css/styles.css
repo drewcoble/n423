@@ -13,7 +13,7 @@ body {
   width: 100%;
   padding-top: 70px;
   padding-bottom: 50px;
-  font-family: isonorm, sans-serif;
+  font-family: atten-round-new, sans-serif;
   color: #172120;
   background-color: #eeeee9;
 }
@@ -351,6 +351,22 @@ nav .nav-content .nav-user .user-div {
 #home-content .joke-div .joke-bottom .user-name {
   letter-spacing: 0.5px;
   font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#home-content .joke-div .joke-bottom .user-name .user-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 5px;
+  font-weight: bold;
+}
+#home-content .joke-div .joke-bottom .user-name .user-link .user-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin-left: 5px;
 }
 
 #my-jokes-content {
@@ -504,7 +520,7 @@ nav .nav-content .nav-user .user-div {
   padding: 5px;
   border-radius: 8px;
   border: 1px solid #eeeee9;
-  font-family: isonorm, sans-serif;
+  font-family: atten-round-new, sans-serif;
   letter-spacing: 1px;
   font-size: 18px;
 }
