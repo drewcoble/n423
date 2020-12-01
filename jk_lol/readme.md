@@ -2,5 +2,4 @@
 
 ## A place to share your jokes with others.
 
-Firebase Hosting Link Here:  
-(jk-lol.web.app)
+[Check out the site](jk-lol.web.app) on Firebase.
