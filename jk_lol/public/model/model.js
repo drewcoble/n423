@@ -39,12 +39,22 @@ export function getAllJokes(callback) {
     
     _db
     .collection("jokes")
-    .where('public', '==', 'true')
     .orderBy("timestamp", "desc")
     .get()
     .then(function(querySnapshot) {
         //callback function displays home page
         callback(querySnapshot);
+    })
+}
+
+export function getJokeById(jokeId, callback) {
+    _db
+    .collection("jokes")
+    .doc(jokeId)
+    .get()
+    .then((doc) => {
+        let jokeData = doc.data();
+        callback(jokeId, jokeData);
     })
 }
 
@@ -142,7 +152,6 @@ export function createNewJoke(jokeData, callback) {
         category: jokeData.category,
         content: jokeData.content,
         lols: [],
-        public: jokeData.public,
         rating: jokeData.rating,
         uid: jokeData.uid,
         user: jokeData.user,
@@ -157,6 +166,10 @@ export function createNewJoke(jokeData, callback) {
     });
 }
 
+
+
+
+/* * * * Methods for user auth * * * */
 
 export function signIn(email,password) {
     firebase
@@ -216,7 +229,6 @@ export function signOut() {
     .auth()
     .signOut()
     .then(function(result) {
-        // console.log("anon signed in", _user.uid);
-        // getAllJokes()
+        App.showAlert("Successfully signed out.", "")
     })
 }

@@ -48,6 +48,7 @@ nav {
       .nav-menu-btn {
         font-size: 30px;
         height: 70px;
+        min-height: 70px;
         min-width: 60px;
         display: flex;
         justify-content: flex-end;
@@ -74,9 +75,12 @@ nav {
 
         .nav-link {
           height: 70px;
+          min-height: 70px;
           width: 100%;
           padding: 0 20px;
           cursor: pointer;
+          background-color: $white;
+          box-shadow: $shadow;
 
           &:hover {
             background-color: $yellow;

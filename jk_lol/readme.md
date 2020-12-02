@@ -1,5 +1,5 @@
 # JK LOL
 
-## A place to share your jokes with others.
+### A place to share your jokes with others.
 
-[Check out the site](jk-lol.web.app) on Firebase.
+[Check out the site](https://jk-lol.web.app) on Firebase.

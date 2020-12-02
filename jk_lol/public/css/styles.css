@@ -25,7 +25,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
   position: fixed;
   top: 0;
   left: 0;
@@ -55,6 +55,7 @@ nav .nav-content .nav-menu {
 nav .nav-content .nav-menu .nav-menu-btn {
   font-size: 30px;
   height: 70px;
+  min-height: 70px;
   min-width: 60px;
   display: flex;
   justify-content: flex-end;
@@ -74,14 +75,17 @@ nav .nav-content .nav-menu #signInOut {
   display: flex;
   flex-direction: column;
   background-color: #fffdfb;
-  box-shadow: 2px 5px 9px rgba(55, 65, 64, 0.15);
+  box-shadow: 2px 5px 9px rgba(23, 33, 32, 0.15);
 }
 nav .nav-content .nav-menu .nav-links .nav-link,
 nav .nav-content .nav-menu #signInOut .nav-link {
   height: 70px;
+  min-height: 70px;
   width: 100%;
   padding: 0 20px;
   cursor: pointer;
+  background-color: #fffdfb;
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
 }
 nav .nav-content .nav-menu .nav-links .nav-link:hover,
 nav .nav-content .nav-menu #signInOut .nav-link:hover {
@@ -136,10 +140,27 @@ nav .nav-content .nav-user .user-div {
   min-height: 250px;
   width: 275px;
   background-color: #fffdfb;
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+.alert-container .alert-box #alert-btn-container {
+  width: 50%;
+  min-width: 100px;
+}
+.alert-container .alert-box #alert-btn-container .site-btn {
+  margin-top: 10px;
+  color: white;
+}
+.alert-container .alert-box #alert-btn-container #cancel-btn {
+  background-color: #374140;
+}
+.alert-container .alert-box #alert-btn-container #delete-btn {
+  background-color: #b91e1e;
 }
 
 #page-title {
@@ -147,7 +168,21 @@ nav .nav-content .nav-user .user-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
   height: 50px;
+}
+
+.site-btn {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 #site-content {
@@ -160,11 +195,11 @@ nav .nav-content .nav-user .user-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  letter-spacing: 10px;
-  background-color: rgba(238, 238, 233, 0.9);
+  letter-spacing: 6px;
+  background-color: rgba(255, 253, 251, 0.9);
   position: fixed;
   bottom: 0;
-  box-shadow: 1px -4px 6px rgba(55, 65, 64, 0.15);
+  box-shadow: 1px -4px 6px rgba(23, 33, 32, 0.15);
   padding: 10px 20px;
 }
 #site-content .filter-btn-container .filter-btn {
@@ -175,8 +210,8 @@ nav .nav-content .nav-user .user-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  font-size: 22px;
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
 }
 #site-content #sign-in-content,
 #site-content #sign-up-content {
@@ -205,6 +240,7 @@ nav .nav-content .nav-user .user-div {
 #site-content #sign-in-content #sign-up-form .input-row input,
 #site-content #sign-up-content #sign-in-form .input-row input,
 #site-content #sign-up-content #sign-up-form .input-row input {
+  font-size: 16px;
   margin-top: 5px;
   width: 100%;
   height: 40px;
@@ -235,50 +271,33 @@ nav .nav-content .nav-user .user-div {
 #site-content #sign-in-content #sign-up-form .submit-btn,
 #site-content #sign-up-content #sign-in-form .submit-btn,
 #site-content #sign-up-content #sign-up-form .submit-btn {
-  width: 100%;
-  height: 50px;
   background-color: #f9ef69;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-  border-radius: 8px;
-  border: none;
 }
 
 .hidden {
   display: none;
 }
 
-#home-content {
-  width: 100%;
-  margin-bottom: 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-#home-content .joke-div {
+.joke-div {
   min-height: 300px;
   width: 330px;
   border-radius: 8px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-  margin-top: 5px;
-  margin-bottom: 20px;
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
+  margin: 5px 10px 25px;
 }
-#home-content .joke-div .joke-top {
+.joke-div .joke-top {
   min-height: 230px;
   width: 100%;
   background-color: #fffdfb;
   border-radius: 8px 8px 0 0;
   padding: 20px;
 }
-#home-content .joke-div .joke-top .joke-top-info {
+.joke-div .joke-top .joke-top-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#home-content .joke-div .joke-top .joke-top-info h6 {
+.joke-div .joke-top .joke-top-info h6 {
   display: flex;
   align-items: center;
   width: 100%;
@@ -288,7 +307,7 @@ nav .nav-content .nav-user .user-div {
   color: rgba(55, 65, 64, 0.4);
   font-family: chaloops, sans-serif;
 }
-#home-content .joke-div .joke-top .joke-top-info .lol-div {
+.joke-div .joke-top .joke-top-info .lol-div {
   height: 30px;
   min-width: 60px;
   border-radius: 8px;
@@ -297,9 +316,9 @@ nav .nav-content .nav-user .user-div {
   align-items: center;
   justify-content: space-between;
   padding: 0 3px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
 }
-#home-content .joke-div .joke-top .joke-top-info .lol-div .lol-num {
+.joke-div .joke-top .joke-top-info .lol-div .lol-num {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,7 +327,7 @@ nav .nav-content .nav-user .user-div {
   min-width: 24px;
   text-align: center;
 }
-#home-content .joke-div .joke-top .joke-top-info .lol-div .lol-icon {
+.joke-div .joke-top .joke-top-info .lol-div .lol-icon {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -318,10 +337,10 @@ nav .nav-content .nav-user .user-div {
   min-width: 30px;
   font-size: 20px;
 }
-#home-content .joke-div .joke-top .joke-top-info .lol-clicked {
+.joke-div .joke-top .joke-top-info .lol-clicked {
   background-color: #f9ef69;
 }
-#home-content .joke-div .joke-top h5 {
+.joke-div .joke-top h5 {
   display: flex;
   align-items: center;
   width: 100%;
@@ -329,7 +348,7 @@ nav .nav-content .nav-user .user-div {
   font-size: 22px;
   letter-spacing: 1px;
 }
-#home-content .joke-div .joke-top p {
+.joke-div .joke-top p {
   display: flex;
   align-items: center;
   width: 100%;
@@ -337,7 +356,7 @@ nav .nav-content .nav-user .user-div {
   font-size: 18px;
   letter-spacing: 0.5px;
 }
-#home-content .joke-div .joke-bottom {
+.joke-div .joke-bottom {
   height: 80px;
   width: 100%;
   background-color: rgba(249, 239, 105, 0.95);
@@ -348,128 +367,80 @@ nav .nav-content .nav-user .user-div {
   padding: 0 20px;
   border-radius: 0 0 8px 8px;
 }
-#home-content .joke-div .joke-bottom .user-name {
+.joke-div .joke-bottom .user-name {
   letter-spacing: 0.5px;
   font-size: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-#home-content .joke-div .joke-bottom .user-name .user-link {
+.joke-div .joke-bottom .user-name .user-link {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: 5px;
   font-weight: bold;
 }
-#home-content .joke-div .joke-bottom .user-name .user-link .user-img {
+.joke-div .joke-bottom .user-name .user-link .user-img {
   height: 40px;
   width: 40px;
-  border-radius: 40px;
+  border-radius: 15px;
   margin-left: 5px;
+}
+.joke-div .joke-bottom .edit-delete-div {
+  display: flex;
+  flex-direction: row;
+}
+.joke-div .joke-bottom .edit-delete-div div {
+  margin-left: 10px;
+}
+
+#home-content {
+  width: 100%;
+  padding: 20px 20px 0;
+  margin-bottom: 70px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 #my-jokes-content {
   width: 100%;
+  padding: 20px 20px 0;
   margin-bottom: 70px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+#add-joke {
+  display: flex;
   align-items: center;
-}
-#my-jokes-content .joke-div {
-  min-height: 300px;
-  width: 330px;
-  border-radius: 8px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-#my-jokes-content .joke-div .joke-top {
-  min-height: 230px;
-  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
   background-color: #fffdfb;
-  border-radius: 8px 8px 0 0;
-  padding: 20px;
+  border: 3px solid #eeeee9;
+  border-radius: 50px;
+  height: 50px;
+  width: 150px;
+  font-size: 16px;
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
+  padding-right: 15px;
 }
-#my-jokes-content .joke-div .joke-top .joke-top-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#my-jokes-content .joke-div .joke-top .joke-top-info h6 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: rgba(55, 65, 64, 0.4);
-  font-family: chaloops, sans-serif;
-}
-#my-jokes-content .joke-div .joke-top .joke-top-info .lol-div {
-  height: 30px;
-  min-width: 60px;
-  border-radius: 8px;
-  background-color: rgba(55, 65, 64, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
-}
-#my-jokes-content .joke-div .joke-top .joke-top-info .lol-div .lol-num {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: calc(100% - 24px);
-  min-width: 24px;
-  text-align: center;
-}
-#my-jokes-content .joke-div .joke-top .joke-top-info .lol-div .lol-icon {
-  height: 100%;
+#add-joke i {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 30px;
-  min-width: 30px;
-  font-size: 20px;
-}
-#my-jokes-content .joke-div .joke-top .joke-top-info .lol-clicked {
+  width: 50px;
   background-color: #f9ef69;
-}
-#my-jokes-content .joke-div .joke-top h5 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 90px;
-  font-size: 22px;
-  letter-spacing: 1px;
-}
-#my-jokes-content .joke-div .joke-top p {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 60px;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-#my-jokes-content .joke-div .joke-bottom {
-  height: 80px;
-  width: 100%;
-  background-color: rgba(249, 239, 105, 0.95);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  border-radius: 0 0 8px 8px;
-}
-#my-jokes-content .joke-div .joke-bottom .user-name {
-  letter-spacing: 0.5px;
-  font-size: 16px;
+  font-size: 30px;
+  color: #374140;
+  border-radius: 50px 0 0 50px;
 }
 
 .lol-text {
@@ -537,7 +508,7 @@ nav .nav-content .nav-user .user-div {
   margin: 10px 0 0;
   background-color: #f9ef69;
   border-radius: 8px;
-  box-shadow: 1px 4px 6px rgba(55, 65, 64, 0.15);
+  box-shadow: 1px 4px 6px rgba(23, 33, 32, 0.15);
   font-size: 22px;
 }
 

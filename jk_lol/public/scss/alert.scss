@@ -14,9 +14,28 @@
     min-height: 250px;
     width: 275px;
     background-color: $white;
+    box-shadow: $shadow;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+
+    #alert-btn-container {
+      width: 50%;
+      min-width: 100px;
+
+      .site-btn {
+        margin-top: 10px;
+        color: white;
+      }
+      #cancel-btn {
+        background-color: $dark-gray;
+      }
+      #delete-btn {
+        background-color: $red;
+      }
+    }
   }
 }
