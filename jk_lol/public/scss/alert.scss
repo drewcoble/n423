@@ -30,8 +30,12 @@
         margin-top: 10px;
         color: white;
       }
+      .filter-btn-select {
+        color: $black;
+      }
       #cancel-btn {
         background-color: $dark-gray;
+        color: $white;
       }
       #delete-btn {
         background-color: $red;

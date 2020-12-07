@@ -27,13 +27,13 @@ function initNavMenu() {
     });
 
     $(".nav-title").click(function() {
-        console.log("logo clicked")
+        // console.log("logo clicked")
         Model.getAllJokes(displayHomeContent);
         closeNavMenu();
     });
 
     $("#home").click(function() {
-        console.log("home clicked")
+        // console.log("home clicked")
         Model.getAllJokes(displayHomeContent);
         closeNavMenu();
     });
@@ -49,7 +49,7 @@ function initNavMenu() {
 export function initCardListeners() {
     $(".lol-div").click(function(e) {
         let card_id = this.id;
-        console.log("card clicked", card_id);
+        // console.log("card clicked", card_id);
         Model.toggleLol(card_id);
     });
     $(".user-link").click((e) => {
@@ -65,6 +65,10 @@ export function initCardListeners() {
         let buttons = `<div class='site-btn' id='cancel-btn'>Cancel</div>
         <div class='site-btn' id='delete-btn'>Delete</div>`;
         showAlert(message,buttons);
+
+        $("#delete-btn").click(() => {
+            Model.deleteJoke(e.target.id, displayUserPageContent);
+        });
     })
 }
 
@@ -78,11 +82,30 @@ export function displayHomeContent(jokesData) {
     $("#site-content").html(`
         <div id="home-content"></div>
         <div class="filter-btn-container hidden">
-          <div class="filter-btn">
+          <div id="filter-btn" class="filter-btn">
             FILTER JOKES
           </div>
-        </div>
-    `);
+        </div>`);
+
+    $("#filter-btn").click(()=>{
+        //show alert with filter options
+        let message = '<h2>Filter Jokes</h2>';
+        let buttons = `
+        <div class='site-btn filter-btn-select' id='filter-All-Jokes'>All Jokes</div>
+        <div class='site-btn filter-btn-select' id='filter-Puns'>Puns</div>
+        <div class='site-btn filter-btn-select' id='filter-Dad-Jokes'>Dad Jokes</div>
+        <div class='site-btn filter-btn-select' id='filter-Knock-Knock'>Knock Knock</div>
+        <div class='site-btn filter-btn-select' id='filter-Classics'>Classics</div>
+        <div class='site-btn filter-btn-select' id='filter-Stand-Up'>Stand-up</div>
+        <div class='site-btn filter-btn-select' id='cancel-btn'>Cancel</div>
+        `;
+        showAlert(message,buttons);
+
+        $(".filter-btn-select").click((e)=>{
+            // console.log(e.target.id);
+            Model.getFilterJokes(e.target.id, displayHomeContent)
+        })
+    });
 
     jokesData.forEach(function(doc) {
 
@@ -110,7 +133,7 @@ export function displayHomeContent(jokesData) {
                 <div class="joke-bottom">
                     <div class="user-name">
                         by <div class='user-link' id='${joke.uid}'>${joke.user}
-                        <img src='https://firebasestorage.googleapis.com/v0/b/jk-lol.appspot.com/o/IMG_3294.JPG?alt=media&token=5002335f-34d9-4802-84f5-43af76cf6821' class='user-img'>
+                        <!--<img src='https://firebasestorage.googleapis.com/v0/b/jk-lol.appspot.com/o/IMG_3294.JPG?alt=media&token=5002335f-34d9-4802-84f5-43af76cf6821' class='user-img'>-->
                         </div>
                     </div>
                 </div>
@@ -167,13 +190,13 @@ export function displayUserPageContent(jokesData, userId) {
                     <div class="joke-bottom">
                         <div class="user-name">
                             by <div class='user-link' id='${joke.uid}'>${joke.user}
-                            <img src='https://firebasestorage.googleapis.com/v0/b/jk-lol.appspot.com/o/IMG_3294.JPG?alt=media&token=5002335f-34d9-4802-84f5-43af76cf6821' class='user-img'>
+                            <!--<img src='https://firebasestorage.googleapis.com/v0/b/jk-lol.appspot.com/o/IMG_3294.JPG?alt=media&token=5002335f-34d9-4802-84f5-43af76cf6821' class='user-img'>-->
                             </div>
                         </div>
                         <div class='edit-delete-div'>
-                            <div class='edit' id='${doc.id}'><i class="fas fa-edit"></i>Edit</div>
+                            <div class='edit' id='${doc.id}'><i class="fas fa-edit" id='${doc.id}'></i>Edit</div>
                             &nbsp;
-                            <div class='delete' id='${doc.id}'><i class="fas fa-trash"></i> Delete</div>
+                            <div class='delete' id='${doc.id}'><i class="fas fa-trash" id='${doc.id}'></i> Delete</div>
                         </div>
                 </div>
                 </div>
@@ -186,7 +209,7 @@ export function displayUserPageContent(jokesData, userId) {
         initCardListeners();
     }
     else {
-        console.log(jokesData);
+        // console.log(jokesData);
         $("#my-jokes-content").append(`
             <br>
             <h3>You haven't added any jokes yet.</h3>
@@ -297,7 +320,7 @@ export function setSignInOut(data) {
         $('#myJokes').removeClass('hidden');
         //create listener for 'my jokes' link
         $("#myJokes").click(function() {
-            console.log("my jokes clicked")
+            // console.log("my jokes clicked")
             Model.getJokesByUserId(displayUserPageContent);
             closeNavMenu();
         });
@@ -345,8 +368,8 @@ export function displayCreateJokeContent() {
                 <option value="Puns">Puns</option>
                 <option value="Dad Jokes">Dad Jokes</option>
                 <option value="Knock Knock Jokes">Knock Knock Jokes</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="Classics">Classics</option>
+                <option value="Stand-up">Stand-up</option>
                 </select>
             </div>
 
@@ -430,8 +453,8 @@ export function displayEditJokeContent(jokeID, jokeData) {
                 <option value="Puns">Puns</option>
                 <option value="Dad Jokes">Dad Jokes</option>
                 <option value="Knock Knock Jokes">Knock Knock Jokes</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="Classics">Classics</option>
+                <option value="Stand-up">Stand-up</option>
                 </select>
             </div>
 
@@ -497,10 +520,7 @@ export function displayEditJokeContent(jokeID, jokeData) {
                 setup: jokeSetup,
                 punchline: jokePunchline
             },
-            lols: [],
-            rating: jokeRating,
-            uid: '',
-            user: ''
+            rating: jokeRating
         }
 
 

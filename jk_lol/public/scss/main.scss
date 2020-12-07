@@ -7,6 +7,8 @@
   // margin-top: 75px;
   height: 50px;
   // color: green;
+  font-family: $font-title;
+  color: $dark-gray;
 }
 
 .site-btn {
@@ -20,6 +22,7 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  background-color: $yellow;
 }
 
 #site-content {
