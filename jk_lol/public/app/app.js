@@ -149,7 +149,12 @@ export function displayHomeContent(jokesData) {
 }
 
 export function displayUserPageContent(jokesData, userId) {
-    $("#page-title").html(`${jokesData.docs[0].data().user}'s Jokes`);
+    if (jokesData.docs[0]) {
+        $("#page-title").html(`${jokesData.docs[0].data().user}'s Jokes`);
+    }
+    else {
+        $("#page-title").html(`My Jokes`);
+    }
 
     $("#site-content").html(`
         <div id="my-jokes-content"></div>

@@ -14,13 +14,12 @@ export function initFirebase(callback) {
             // console.log("User: ", _user);
             App.setSignInOut('SignedIn');
             // console.log(user.uid);
-            getJokesByUserId(App.displayUserPageContent, user.uid)
         } else {
             // console.log("no user");
             _user = null;
             App.setSignInOut('SignedOut');
-            getAllJokes(callback);
         }
+        getAllJokes(callback);
         
         // App.displayCreateJokeContent();
 });
